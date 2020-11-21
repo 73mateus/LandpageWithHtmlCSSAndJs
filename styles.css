@@ -1,0 +1,263 @@
+/*
+    Passo a passo:
+
+    Passo 1: Usar o seletor universal para tirar as margens  
+    
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+        }
+    Passo 2: Trablhe no estilo da Nav:
+        
+        nav{
+            height: 10vh; 10vh vale 10% do viewport
+            background-color:#  ;
+}
+    Passo 3: Trabalhe na ul .nav-links
+
+
+*/
+@font-face{
+    font-family: Baloo-sb;
+    src: url('fonts/Baloo2-SemiBold.ttf');
+  }
+@font-face{
+    font-family: Baloo-b;
+    src: url('fonts/Baloo2-Bold.ttf');
+  }
+@font-face{
+    font-family: Baloo-xb;
+    src: url('fonts/Baloo2-ExtraBold.ttf');
+  }
+@font-face{
+    font-family: Baloo-m;
+    src: url('fonts/Baloo2-Medium.ttf');
+  }
+@font-face{
+    font-family: Baloo-r;
+    src: url('fonts/Baloo2-Regular.ttf');
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*faz com que os valores de padding e border sejam incorporados às dimensões horizontal e vertical do elemento. Com isso, width e height passam a representar o tamanho total, independentemente das demais propriedades.*/
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #323234;
+    
+}
+header{
+    border-bottom: solid 1px white;
+    background-color:#414241;
+    width: 100%;
+    height: 69px;
+    position: fixed;
+    top: 0;
+    align-items: center;
+}
+.all{
+    margin: auto;
+    max-width: 750px;
+    
+}
+
+section{
+    margin: 89px 20px ;
+    
+}
+h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+    color: white;
+    margin-top: 56px;
+    margin-bottom: 33px;
+  }
+.description{
+    color: white;
+    
+
+}
+.foto{
+    margin-top: 22px;
+    width: 100%;
+    
+    
+}
+
+
+  nav{
+    height: 10vh; /*10vh vale 10% do viewport*/
+    display: flex;
+    align-items: flex-start; 
+    
+}
+
+
+.nav-links{
+    display: flex; /*isso permite a utilização do flexbox*/
+    list-style: none;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: auto;   
+}
+
+
+.nav-links li a{
+    transition: all 1s ease 0s;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.formTitle{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    margin-top: 43px;
+    margin-bottom: 15px;
+}
+
+.myBox{
+  
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-around;
+    padding-top:20px;
+    display: 10px;
+    border-radius: 10px;
+}
+.myInput{
+    font-size: large;
+    font-weight: bold;
+    background-color: transparent;
+    box-shadow: none;
+    margin-bottom: 1rem;
+    color: white;
+    border-style: solid;
+    border-color: white;
+    border-radius: 30px;
+    height: 60px;
+    width: 100%;
+    padding: 10px;  
+}
+
+.myInput2{
+    font-size: large;
+    font-weight: bold;
+    background-color: #414241;
+    box-shadow: none;
+    margin-bottom: 1rem;
+    color: white;
+    border-style: solid;
+    border-color: white;
+    border-radius: 30px;
+    height: 40px;
+    width: 100%;
+    padding: 10px;  
+}
+
+.mySubmit{
+    background-color: #323234;
+    color: white;
+    
+}
+.mySubmit2{
+    background-color: #24af91;
+    color: white;
+}
+::-webkit-input-placeholder {
+    color:  white;
+    
+ }
+.container{
+    display: flex;
+}
+
+
+    /*Adicionando hamburgers*/
+    .line{
+        border: solid 3px;
+        border-color:white;
+        color: white;
+        background-color:transparent;
+        padding:10px 20px;
+        margin-right: 20px;
+        border-radius: 30px;
+    }
+    .line:hover{
+    
+        background-color:#24af91;
+        transform: scale(1.25);
+    
+    }
+   
+    .my-logo{
+        margin-left : 20px;
+        height: 69px;
+    }
+
+    .my-logo:hover{
+    
+        transform: scale(1.5);
+    
+    }
+
+    
+    .hamburger{
+        position: absolute;
+        cursor: pointer;/*Quando passar o mouse, aparece a mãosinha*/
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+    }
+
+    .nav-links{
+        background-color: #24af91;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        /*display: none;*/
+        clip-path: circle(100px at 90% -10%); /*isso cria uma máscara circular*/
+        -webkit-clip-path: circle(100px at 90% -20%);
+        transition: all 1s ease-out;
+        
+    }
+    
+    
+
+    .nav-links.open{
+        clip-path: circle(100px at 90% -10%); /*isso cria uma máscara circular*/
+        -webkit-clip-path: circle(1000px at 90% -10%);
+    }
+    .landing{
+        flex-direction: column;
+
+    }
+
+    @media (max-width: 400px) { 
+        .my-logo{
+            display: none;
+        }
+        .line{
+            margin: auto;
+        }
+
+     }
+
+     @media (min-width: 880px) { 
+        h1{
+            font-size: 60px;
+        }
+
+     }
+
+
